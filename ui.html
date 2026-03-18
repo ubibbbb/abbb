@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>AbibKah — Particles 3D</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="three-canvas" aria-hidden="true"></canvas>
+
+<!-- watermark kiri atas -->
+<div id="watermark" role="banner"><span id="abib">abib</span><span id="kah">kah</span></div>
+
+<!-- menu titik tiga kanan atas -->
+<div id="menu">
+  <button id="dots" aria-label="menu">⋯</button>
+  <div id="menu-panel" class="hidden" role="dialog" aria-hidden="true">
+    <div class="menu-row">
+      <label for="particleText">Text partikel</label>
+      <input id="particleText" type="text" value="abibkah" />
+    </div>
+    <div class="menu-row">
+      <label for="mapping">Mapping gesture → particle</label>
+      <select id="mapping">
+        <option value="text">two → Text</option>
+        <option value="saturn">metal → Saturn</option>
+        <option value="heart">fist → Heart</option>
+        <option value="burst">open → Burst</option>
+        <option value="metalshard">pinch → Metal shard</option>
+      </select>
+    </div>
+    <div class="menu-row small">
+      <label for="density">Density / Intensity</label>
+      <input id="density" type="range" min="1" max="120" value="28"/>
+    </div>
+    <div class="menu-row">
+      <button id="apply">Apply</button>
+      <button id="reset">Reset</button>
+    </div>
+    <p class="hint">Klik Apply lalu tutup.</p>
+  </div>
+</div>
+
+<!-- status kiri bawah -->
+<div id="status">deteksi: -</div>
+
+<!-- camera preview kanan bawah -->
+<div id="camera-wrap" aria-hidden="false">
+  <video id="cam" autoplay muted playsinline></video>
+  <div id="cam-overlay">camera</div>
+</div>
+
+<!-- credits footer (hidden on tiny screens) -->
+<div id="credits">AbibKah • Particles 3D</div>
+
+<!-- libs -->
+<script src="https://unpkg.com/three@0.154.0/build/three.min.js"></script>
+<script src="https://unpkg.com/three@0.154.0/examples/jsm/loaders/GLTFLoader.js"></script>
+
+<!-- app -->
+<script src="app.js"></script>
+</body>
+</html>
